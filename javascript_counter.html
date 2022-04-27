@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <style>
+        .main{
+            background-color: rgb(218, 163, 163);
+            width: 30%;
+            height: 45px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+          .bt{
+             margin-left:65px;
+             margin-top: 12px;
+            border:2px solid black;
+            border-radius: 10px;
+             display: inline-block;
+             width: 15%;
+              height: 30px;
+             
+              padding: 5px; 
+          }
+        span{
+          
+            margin-left: 45px;
+        }
+      
+    </style>
+</head>
+<body>
+    <h2>NUMBER COUNTER USING JAVASCRIPT</h2>
+  
+    <div class="main">
+        <button type="button" class="bt" placeholder="click me" onclick="decrease()"> - </button>
+        <span id="inp"></span>
+        <button type="button" class="bt" placeholder="click me" onclick="increase()" > + </button>
+    </div>
+   
+    <script>
+       var counter=0;
+       document.getElementById('inp').innerHTML= counter;
+       function increase(){
+           counter=counter+1;
+           document.getElementById('inp').innerHTML=counter;
+       }
+       function decrease(){
+           counter=counter-1;
+           document.getElementById('inp').innerHTML=counter;
+
+       }
+    </script>
+    
+</body>
+</html>
