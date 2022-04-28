@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      id="main"
+      style="
+        width: 22%;
+        margin-left: 20px;
+        margin-top: 80px;
+        border: 2px solid rgb(183, 216, 196);
+        height: 272px;
+        box-shadow: 2px solid black;
+        border-radius: 5px;
+        background-color: rgb(204, 207, 207);
+      "
+    >
+      <h3>JAVASCRIPT FORM TO RECOMMEND WEIGHT ACCORDING TO THEIR AGE</h3>
+
+      <div id="1" style="margin-top: 10px; margin-left: 15px">
+        <form>
+          <label for="age">Age:</label>
+          <input type="text" id="id1" name="fname" /><br /><br />
+        </form>
+      </div>
+
+      <div id="2" style="margin-top: 10px">
+        <form>
+          <label for="weight">Weight:</label>
+          <input type="text" id="id2" name="fname" /><br /><br />
+        </form>
+      </div>
+      <div id="3" style="margin-left: 92px">
+        <button type="button" id="bt" onclick="weight_recommend()">
+          Click here
+        </button>
+        
+      </div>
+
+      <p
+        id="pid"
+        style="
+        width: 120px;
+          /* border: 1px solid rgb(153, 104, 104); */
+          height: 50px;
+          border-radius: 10px;
+          margin-bottom: 10px;
+        "
+      >
+        result wiil display here
+      </p>
+    </div>
+
+    <script>
+
+      function weight_recommend(){
+           var ag = document.getElementById('id1').value;
+           var wt = document.getElementById('id2').value;
+          if( ag>=5 && ag<=7){
+
+               if(wt>=15 && wt<=20){
+               document.getElementById('pid').innerHTML=" keep it up!";
+               }
+              else if(wt<15){
+              document.getElementById('pid').innerHTML="under weight";
+              }
+              else if(wt>20){
+              document.getElementById('pid').innerHTML=" over weight";
+              }
+
+          }
+         else if( ag>=8 && ag<=10){
+
+             if(wt>=21 && wt<=25){
+             document.getElementById('pid').innerHTML="keep it up!";
+             }
+             else if(wt<21){
+             document.getElementById('pid').innerHTML="under weight";
+            }
+            else if(wt>25){
+            document.getElementById('pid').innerHTML="over weight";
+           }
+
+           }
+          else if( ag>=11 && ag<=15){
+
+            if(wt>=26 && wt<=30){
+           document.getElementById('pid').innerHTML="keep it up";
+           }
+           else if(wt<26){
+           document.getElementById('pid').innerHTML="under weight";
+           }
+            else if(wt>30){
+          document.getElementById('pid').innerHTML="over weight";
+          }
+        }
+
+      else if( ag>=16 && ag<=20){
+
+      if(wt>=31 && wt<=40){
+      document.getElementById('pid').innerHTML="keep it up";
+      }
+      else if(wt<31){
+      document.getElementById('pid').innerHTML="under weight";
+      }
+      else if(wt>40){
+      document.getElementById('pid').innerHTML="over weight";
+      }
+
+      }
+
+      }
+    </script>
+  </body>
+</html>
