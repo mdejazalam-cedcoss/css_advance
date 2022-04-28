@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product table</title>
+   
+
+</head>
+<body>
+    <div>
+
+    <div style="margin:20px;padding:8px">
+   <label>product_id</label>
+   <input id="inp1"  style="margin-left: 20px;">
+   </div>
+
+   <div style="margin:20px;padding:8px">
+   <label>product_name</label>
+    <input id="inp2">
+   </div>
+
+   <div style="margin:20px;padding:8px">
+   <label>product_price</label>
+   <input id="inp3">
+   </div>
+
+    </div>
+
+    <div id="3">
+        <button type="button" id="bt" onclick="add_in()">
+          add product
+        </button>
+        
+      </div>
+
+    <p id="pid"></p>
+    <table id="myTable" style="width:25%;">
+        <tr>
+            <th>product_id</th>
+            <th>product_name</th>
+            <th>product_price</th>
+        </tr>
+    </table>
+
+ <!-- javascript code -->
+
+    <script>
+
+    function add_in(){
+     var arr= [];
+     var a= document.getElementById('inp1').value;
+     arr.push(a)
+     var b= document.getElementById('inp2').value;
+     arr.push(b)
+    var c= document.getElementById('inp3').value;
+     arr.push(c)
+
+    // writing values in tables
+
+     const new_tr = document.createElement("tr"); 
+
+     const new_td1 = document.createElement("td");
+     const new_td2 = document.createElement("td");
+     const new_td3 = document.createElement("td");
+
+
+     const textnode1 = document.createTextNode(arr[0]);
+     const textnode2= document.createTextNode(arr[1]);
+     const textnode3 = document.createTextNode(arr[2]);
+
+
+     new_td1.appendChild(textnode1);
+     new_td2.appendChild(textnode2);
+     new_td3.appendChild(textnode3);
+     
+     new_tr.appendChild(new_td1);
+     new_tr.appendChild(new_td2);
+     new_tr.appendChild(new_td3);
+
+     document.getElementById('myTable').appendChild(new_tr);
+
+
+
+
+
+ }
+
+
+
+    </script>
+</body>
+</html>
