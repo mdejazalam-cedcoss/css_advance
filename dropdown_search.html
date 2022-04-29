@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add dropdown and search</title>
+  </head>
+  <body>
+    <!-- dropdown  -->
+    <label>Choose one:</label>
+    <select name="select" id="id1">
+      <option value="0" selected>Company</option>
+      <option value="1">Model</option>
+      <option value="2">Memory(GB)</option>
+      <option value="3">Price(Rs)</option>
+    </select>
+    <!-- input  -->
+    <input id="inp1" placeholder="enter text" />
+
+    <!-- button  -->
+    <button id="bt1" onclick="search()">search</button>
+
+    <!-- table  -->
+    <table id="myTable" style="width: 25%">
+      <tr>
+        <th>Company</th>
+        <th>Model</th>
+        <th>Memory (GB)</th>
+        <th>Price (Rs)</th>
+      </tr>
+    </table>
+
+    <!-- javascript code  -->
+
+    <script>
+        let arr = [
+          ["samsung", "galaxy", 64, 15000],
+          ["nokia", "s730", 128, 22000],
+          ["xiaomi", "Note", 32, 12000],
+          ["motoroala", "G10", 32, 15000],
+          ["apple", "s12", 64, 25000],
+        ];
+      function search() {
+        var sel = document.getElementById("id1").value; // company=>  0
+        var inp = document.getElementById("inp1").value; //   samsung
+
+        //  document.write(sel); // 0
+        //  document.write(inp);  // samsung
+
+        for (i = 0; i < arr.length; i++) {
+          if (arr[i][sel] == inp) {     // samsung == samsung
+            
+         
+            const new_tr = document.createElement("tr");
+            for (var j = 0; j < arr[i].length; j++) {
+              const new_td1 = document.createElement("td");
+              const textnode1 = document.createTextNode(arr[i][j]);
+              new_td1.appendChild(textnode1);
+
+              new_tr.appendChild(new_td1);
+            } // for ends here
+            document.getElementById("myTable").appendChild(new_tr);
+          } // if ends here
+          
+        } // for ends here
+      } // funtion ends here
+    </script>
+  </body>
+</html>
