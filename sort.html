@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- first dropdown  -->
+    <label>Choose one:</label>
+    <select name="select" id="id1">
+      <option value="0" selected>Company</option>
+      <option value="1">Model</option>
+      <option value="2">Memory(GB)</option>
+      <option value="3">Price(Rs)</option>
+    </select>
+
+    <!-- second dropdown  -->
+    <label>choose priority</label>
+    <select name="select" id="id2">
+      <option value="0" selected>Ascending</option>
+      <option value="1">descending</option>
+    </select>
+
+    <!-- sort button  -->
+    <button id="bt1" onclick="sort()">sort</button>
+
+    <!-- table -->
+
+    <table id="myTable" style="width: 25%">
+      <tr>
+        <th>Company</th>
+        <th>Model</th>
+        <th>Memory (GB)</th>
+        <th>Price (Rs)</th>
+      </tr>
+    </table>
+
+    <!-- javascript code  -->
+
+    <script>
+        // 2d arragy global declared. 
+      let a = [
+        ["samsung", "galaxy", 64, 15000],
+        ["nokia", "s730", 128, 22000],
+        ["xiaomi", "note", 32, 12000],
+        ["motoroala", "g10", 32, 15000],
+        ["apple", "s12", 64, 25000],
+      ];
+       
+      // sort function
+      function sort() {
+      
+
+        var column = document.getElementById("id1").value; // 
+        var order = document.getElementById("id2").value; //   
+
+        a.sort(sortFunction);   // it will give sorted array
+
+        function sortFunction(a, b) {       // main sort function with condition.  
+          if (a[column] === b[column]) {
+            return 0;
+          } else {
+              if(order == 0){
+                return a[column] < b[column] ? -1 : 1;
+              }
+              else{
+                return a[column] > b[column] ? -1 : 1;
+              }
+          }
+        }
+
+
+        // displaying the all elements in table format
+
+        for (var i = 0; i < a.length; i++) {
+          const new_tr = document.createElement("tr");  // create rows
+          for (var j = 0; j < a[i].length; j++) {
+            const new_td1 = document.createElement("td");    // create columns
+            const textnode1 = document.createTextNode(a[i][j]);   // writing data 
+            new_td1.appendChild(textnode1);     // combine data to columns 
+
+            new_tr.appendChild(new_td1);       // combine columns to rows
+          }
+          document.getElementById("myTable").appendChild(new_tr);   // to join html table the data.
+        }
+
+      } // sort function ends here. 
+    </script>
+  </body>
+</html>
