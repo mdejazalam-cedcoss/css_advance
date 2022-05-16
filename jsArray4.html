@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+
+</head>
+<body>
+<!-- creating form  -->
+
+<div class="maindiv">
+
+     <h4>company</h4>
+     <input type="text" placeholder="write here" id="inp1">
+
+     <h4>model</h4>
+     <input type="text" placeholder="write here" id="inp2">
+
+     <h4>memory</h4>
+     <input type="text" placeholder="write here" id="inp3">
+
+     <h4>price</h4>
+     <input type="text" placeholder="write here" id="inp4">
+
+    <div><button style="margin-top:32px;" onclick="display()" >add</button></div>
+
+
+</div>
+
+<!-- creating table  -->
+
+<table id="myTable">
+    <tr>
+        <th>company</th>
+        <th>model</th>
+        <th>Memory</th>
+        <th>price</th>
+    </tr>
+</table>
+
+<!-- javascript code  -->
+<script>
+      
+      function display(){
+        var val1 = document.getElementById('inp1').value;
+        var val2 = document.getElementById('inp2').value;
+        var val3 = document.getElementById('inp3').value;
+        var val4 = document.getElementById('inp4').value;
+
+        const new_tr = document.createElement("tr");
+        
+        const new_td1 = document.createElement("td");
+        const textnode1 = document.createTextNode(val1);
+        new_td1.appendChild(textnode1);
+        new_tr.appendChild(new_td1);  
+
+
+        const new_td2 = document.createElement("td");
+        const textnode2 = document.createTextNode(val2);
+        new_td2.appendChild(textnode2);
+        new_tr.appendChild(new_td2); 
+
+
+        const new_td3 = document.createElement("td");
+        const textnode3 = document.createTextNode(val3);
+        new_td3.appendChild(textnode3);
+        new_tr.appendChild(new_td3); 
+
+
+
+        const new_td4 = document.createElement("td");
+        const textnode4 = document.createTextNode(val4);
+        new_td4.appendChild(textnode4);
+        new_tr.appendChild(new_td4); 
+
+        document.getElementById("myTable").appendChild(new_tr);
+
+
+      }
+
+    
+</script>
+</body>
+</html>
